@@ -9,10 +9,10 @@ QRC_DIREC = ".\\qr\\"
 
 def paste_qr(post_path, qr_path, out_path):
     try:
-        print("Loading: " + post_path)
+        # print("Loading: " + post_path)
         oriImg = Image.open(post_path)
         # addImg(oriImg)
-        print("Loading: " + qr_path)
+        # print("Loading: " + qr_path)
         qrcImg = Image.open(qr_path)
         qrcImg = qrcImg.resize((1000, 1000), Image.ANTIALIAS)
         oriImg.paste(qrcImg,(3000,5000))
@@ -35,7 +35,7 @@ def makea_qr(code, name):
         border = 5
     )
     try:
-        print("Making QRcode for {} with value :{}".format(name,code))
+        # print("Making QRcode for {} with value :{}".format(name,code))
         qr.add_data(code)
         qr.make(fit = True)
         newImg = qr.make_image()

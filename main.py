@@ -1,6 +1,7 @@
 from make_png import paste_qr
 from make_png import makea_qr
 from os.path import dirname, join
+from progress.bar import Bar
 import threading
 import hashlib
 # u know what's new in gamma
@@ -89,11 +90,12 @@ if __name__ == '__main__':
         Thread_List.append(t)
 
     for t in Thread_List:
-        # print ("Starting thread" + str(t))
         t.start()
 
-    for t in Thread_List:
-        t.join()
+    with Bar('Making QRcode ', max = cnt, fill = '▪') as bar:
+        for t in Thread_List:
+            t.join()
+            bar.next()
         
     Thread_List.clear()
     # Paste QRcode on Post
@@ -104,5 +106,7 @@ if __name__ == '__main__':
     for t in Thread_List:
         t.start()
 
-    for t in Thread_List:
-        t.join()
+    with Bar('Pasting QRcode', max = cnt, fill = '▪') as bar:
+        for t in Thread_List:
+            t.join()
+            bar.next()
