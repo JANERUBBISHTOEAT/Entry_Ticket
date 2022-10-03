@@ -1,0 +1,17 @@
+Folder PATH listing for volume Windows
+C:.
+©¦  gamma.py
+©¦  in.png
+©¦  make_png.py
+©¦  res.txt
+©¦  
+©À©¤out
+©¦      1.png
+©¦      2.png
+©¦      3.png
+©¦      
+©¸©¤qr
+        1.png
+        2.png
+        3.png
+        
